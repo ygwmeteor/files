@@ -1,0 +1,1595 @@
+====================================
+ LICENSE
+====================================
+"advanced_security_enabled" : false
+"advanced_security_seats" : 0
+"cluster_support" : false
+"company" : "Netbrain technologies Inc"
+"croquet_support" : false
+"custom_terms" : true
+"evaluation" : false
+"expire_at" : "2023-02-12T23:59:59-08:00"
+"insights_enabled" : false
+"insights_expire_at" : null
+"learning_lab_evaluation_expires" : null
+"learning_lab_seats" : 0
+"perpetual" : false
+"reference_number" : "a0b616"
+"seats" : 110
+"ssh_allowed" : true
+"support_key" : null
+"unlimited_seating" : false
+
+
+====================================
+ RELEASE
+====================================
+RELEASE_VERSION="3.2.6"
+RELEASE_PLATFORM="esx"
+
+RELEASE_BUILD_ID="529c597b97"
+RELEASE_BUILD_DATE="2021-12-12T00:08:08Z"
+
+SHA1s
+-------------------
+ENTERPRISE-MANAGE: 46ac8f2b9ea610cf0de348cc76713c8e422a9417
+GHES-ACTIONS: 6116c2216211b9b4d84255d13b45b46eb161bab0
+GIT-IMPORT: d3da12da82d11b48e8d670ae2ff597f91e8392aa
+
+
+====================================
+ STORAGE
+====================================
+
+DISK INFO
+-------------------
+Model: VMware Virtual disk (scsi)
+Disk /dev/sda: 215GB
+Sector size (logical/physical): 512B/512B
+Partition Table: msdos
+Disk Flags: 
+
+Number  Start   End    Size   Type     File system  Flags
+ 1      1049kB  107GB  107GB  primary  ext4         boot
+ 2      107GB   215GB  107GB  primary  ext4
+
+
+Model: VMware Virtual disk (scsi)
+Disk /dev/sdb: 1100GB
+Sector size (logical/physical): 512B/512B
+Partition Table: unknown
+Disk Flags: 
+
+Model: Linux device-mapper (linear) (dm)
+Disk /dev/mapper/ghe_storage_d8574063-ghe_user_data: 1100GB
+Sector size (logical/physical): 512B/512B
+Partition Table: loop
+Disk Flags: 
+
+Number  Start  End     Size    File system  Flags
+ 1      0.00B  1100GB  1100GB  ext4
+
+
+
+LVM INFO
+-------------------
+  PV         VG                   Fmt  Attr PSize    PFree
+  /dev/sdb   ghe_storage_d8574063 lvm2 a--  1024.00g    0 
+
+  VG                   #PV #LV #SN Attr   VSize    VFree
+  ghe_storage_d8574063   1   1   0 wz--n- 1024.00g    0 
+
+  LV            VG                   Attr       LSize    Pool Origin Data%  Meta%  Move Log Cpy%Sync Convert
+  ghe_user_data ghe_storage_d8574063 -wi-ao---- 1024.00g                                                    
+
+NAME                                 MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+sda                                    8:0    0  200G  0 disk 
+├─sda1                                 8:1    0  100G  0 part /
+└─sda2                                 8:2    0  100G  0 part 
+sdb                                    8:16   0    1T  0 disk 
+└─ghe_storage_d8574063-ghe_user_data 254:0    0 1024G  0 lvm  /data/user
+
+
+DISK USAGE
+-------------------
+Filesystem                                      Size  Used Avail Use% Mounted on
+udev                                             24G     0   24G   0% /dev
+tmpfs                                           4.8G  5.5M  4.8G   1% /run
+/dev/sda1                                        98G   20G   74G  22% /
+tmpfs                                            24G   40K   24G   1% /dev/shm
+tmpfs                                           5.0M     0  5.0M   0% /run/lock
+tmpfs                                            24G     0   24G   0% /sys/fs/cgroup
+/dev/mapper/ghe_storage_d8574063-ghe_user_data 1007G   78M  956G   1% /data/user
+tmpfs                                           4.8G     0  4.8G   0% /run/user/501
+
+Filesystem                                       Inodes  IUsed    IFree IUse% Mounted on
+udev                                            6179973    326  6179647    1% /dev
+tmpfs                                           6183301   1623  6181678    1% /run
+/dev/sda1                                       6553600 108756  6444844    2% /
+tmpfs                                           6183301      6  6183295    1% /dev/shm
+tmpfs                                           6183301      4  6183297    1% /run/lock
+tmpfs                                           6183301     15  6183286    1% /sys/fs/cgroup
+/dev/mapper/ghe_storage_d8574063-ghe_user_data 67108864    258 67108606    1% /data/user
+tmpfs                                           6183301     10  6183291    1% /run/user/501
+
+MOUNTED FILESYSTEMS
+-------------------
+sysfs /sys sysfs rw,nosuid,nodev,noexec,relatime 0 0
+proc /proc proc rw,relatime 0 0
+udev /dev devtmpfs rw,nosuid,relatime,size=24719892k,nr_inodes=6179973,mode=755 0 0
+devpts /dev/pts devpts rw,nosuid,noexec,relatime,gid=5,mode=620,ptmxmode=000 0 0
+tmpfs /run tmpfs rw,nosuid,noexec,relatime,size=4946644k,mode=755 0 0
+/dev/sda1 / ext4 rw,relatime,data=ordered 0 0
+securityfs /sys/kernel/security securityfs rw,nosuid,nodev,noexec,relatime 0 0
+tmpfs /dev/shm tmpfs rw,nosuid,nodev 0 0
+tmpfs /run/lock tmpfs rw,nosuid,nodev,noexec,relatime,size=5120k 0 0
+tmpfs /sys/fs/cgroup tmpfs ro,nosuid,nodev,noexec,mode=755 0 0
+cgroup /sys/fs/cgroup/systemd cgroup rw,nosuid,nodev,noexec,relatime,xattr,release_agent=/lib/systemd/systemd-cgroups-agent,name=systemd 0 0
+pstore /sys/fs/pstore pstore rw,nosuid,nodev,noexec,relatime 0 0
+cgroup /sys/fs/cgroup/devices cgroup rw,nosuid,nodev,noexec,relatime,devices 0 0
+cgroup /sys/fs/cgroup/perf_event cgroup rw,nosuid,nodev,noexec,relatime,perf_event 0 0
+cgroup /sys/fs/cgroup/pids cgroup rw,nosuid,nodev,noexec,relatime,pids 0 0
+cgroup /sys/fs/cgroup/cpuset cgroup rw,nosuid,nodev,noexec,relatime,cpuset 0 0
+cgroup /sys/fs/cgroup/net_cls,net_prio cgroup rw,nosuid,nodev,noexec,relatime,net_cls,net_prio 0 0
+cgroup /sys/fs/cgroup/freezer cgroup rw,nosuid,nodev,noexec,relatime,freezer 0 0
+cgroup /sys/fs/cgroup/cpu,cpuacct cgroup rw,nosuid,nodev,noexec,relatime,cpu,cpuacct 0 0
+cgroup /sys/fs/cgroup/blkio cgroup rw,nosuid,nodev,noexec,relatime,blkio 0 0
+cgroup /sys/fs/cgroup/memory cgroup rw,nosuid,nodev,noexec,relatime,memory 0 0
+mqueue /dev/mqueue mqueue rw,relatime 0 0
+debugfs /sys/kernel/debug debugfs rw,relatime 0 0
+hugetlbfs /dev/hugepages hugetlbfs rw,relatime 0 0
+systemd-1 /proc/sys/fs/binfmt_misc autofs rw,relatime,fd=38,pgrp=1,timeout=0,minproto=5,maxproto=5,direct,pipe_ino=14612 0 0
+binfmt_misc /proc/sys/fs/binfmt_misc binfmt_misc rw,relatime 0 0
+/dev/mapper/ghe_storage_d8574063-ghe_user_data /data/user ext4 rw,noatime,data=ordered 0 0
+tmpfs /run/user/501 tmpfs rw,nosuid,nodev,relatime,size=4946640k,mode=700,uid=501,gid=100 0 0
+
+MYSQL USAGE
+-------------------
+4.0K	2022-02-14 07:38	/data/user/mysql/
+
+REDIS USAGE
+-------------------
+4.0K	2022-02-14 07:38	/data/user/redis/
+
+ALAMBIC USAGE
+-------------------
+
+CACHE USAGE
+-------------------
+7.9M	2022-02-16 06:25	/var/cache
+4.9M	2021-12-12 00:08	/var/cache/debconf
+1.6M	2022-02-16 06:25	/var/cache/man
+1.3M	2022-02-14 20:31	/var/cache/apt
+112K	2021-12-11 23:49	/var/cache/fontconfig
+32K	2021-12-12 00:08	/var/cache/ldconfig
+
+LOG USAGE
+-------------------
+148M	2022-02-16 09:32	/var/log
+97M	2022-02-16 09:32	/var/log/journal
+40K	2021-12-12 00:08	/var/log/apt
+36K	2022-02-16 00:29	/var/log/enterprise-manage
+8.0K	2022-02-14 07:38	/var/log/grafana
+4.0K	2022-02-14 07:38	/var/log/unattended-upgrades
+4.0K	2022-02-14 07:38	/var/log/redis
+4.0K	2022-02-14 07:38	/var/log/ntpstats
+4.0K	2022-02-14 07:38	/var/log/nginx
+4.0K	2022-02-14 07:38	/var/log/mysql
+4.0K	2022-02-14 07:38	/var/log/lxc
+4.0K	2022-02-14 07:38	/var/log/gitmon
+4.0K	2022-02-14 07:38	/var/log/gh-migrator
+4.0K	2022-02-14 07:38	/var/log/ghe-configuration
+4.0K	2021-12-12 00:05	/var/log/fsck
+4.0K	2021-12-12 00:02	/var/log/github
+4.0K	2021-12-12 00:02	/var/log/dependency-graph-api-dispatch
+4.0K	2021-12-11 23:59	/var/log/git-import
+4.0K	2021-12-11 23:49	/var/log/gunicorn
+4.0K	2021-12-11 23:47	/var/log/elasticsearch
+4.0K	2019-03-06 10:13	/var/log/chrony
+4.0K	2018-08-10 18:32	/var/log/osquery
+4.0K	2017-05-25 20:26	/var/log/sysstat
+Log usage truncated.
+
+LARGEST LOG FILES
+-------------------
+97M	2022-02-16 09:32	/var/log/journal/06a675b21cac49118df37f45973b9449/system.journal
+32M	2022-02-16 00:29	/var/log/collectd.log.1
+12M	2022-02-16 09:32	/var/log/collectd.log
+5.0M	2022-02-16 00:29	/var/log/syslog.1
+2.0M	2022-02-16 09:32	/var/log/syslog
+672K	2022-02-15 00:29	/var/log/collectd.log.2.gz
+436K	2022-02-16 00:28	/var/log/error.1
+212K	2022-02-15 00:29	/var/log/syslog.2.gz
+172K	2022-02-16 09:32	/var/log/error
+28K	2021-12-12 00:08	/var/log/apt/eipp.log.xz
+
+UNLINKED OPEN FILES
+-------------------
+
+SYSTEMD JOURNAL LOG USAGE
+-------------------
+Archived and active journals take up 96.0M in the file system.
+
+CORE FILES
+-------------------
+total 0
+
+
+====================================
+ MEMORY
+====================================
+
+FREE
+-------------------
+              total        used        free      shared  buff/cache   available
+Mem:          48307         495       46740          10        1071       47292
+Low:          48307        1567       46740
+High:             0           0           0
+Swap:             0           0           0
+
+PROPORTIONAL SET SIZE
+-------------------
+  PID       Swap       USS       PSS       RSS User       Command
+ 22732     0.0 B    76.4 M    76.5 M    79.1 M root       /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+   287     0.0 B    15.6 M    60.9 M   148.1 M root       /lib/systemd/systemd-journald
+  1762     0.0 B    42.2 M    42.2 M    43.9 M root       /usr/bin/containerd
+  9293     0.0 B    21.9 M    34.3 M    62.7 M enterprise unicorn worker[1] --env production --config-file config/unicorn.rb config.ru
+  9292     0.0 B    21.3 M    33.8 M    62.3 M enterprise unicorn worker[0] --env production --config-file config/unicorn.rb config.ru
+  8657     0.0 B    18.2 M    31.0 M    60.7 M enterprise unicorn master --env production --config-file config/unicorn.rb config.ru
+  1743     0.0 B    25.8 M    25.9 M    27.1 M grafana    /usr/sbin/grafana-server --config=/etc/grafana/grafana.ini --pidfile=/var/run/grafana/grafana-server.pid cfg:default.paths.logs=/var/log/grafana cfg:default.paths.data=/var/lib/grafana cfg:default. 28378     0.0 B   960.0 K    24.2 M    69.9 M root       journalctl -n17 --output=json -f _EXE=/lib/systemd/systemd + _TRANSPORT=kernel
+  1805     0.0 B    17.4 M    19.9 M    28.6 M root       collectd -C /etc/collectd/collectd.conf -f
+   747     0.0 B    18.4 M    19.3 M    24.4 M root       /usr/sbin/syslog-ng -F --pidfile=/var/run/syslog-ng.pid
+  1965     0.0 B    17.6 M    18.2 M    23.0 M nobody     /usr/share/rbenv/versions/current/bin/ruby /usr/share/collectd/listener_stats.rb
+  5467     0.0 B  6864.0 K    10.8 M    17.2 M root       /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -p /var/run/haproxy.pid
+ 21385     0.0 B  8932.0 K  9486.0 K    13.8 M root       /usr/local/bin/ruby -e puts "Waiting for #{ENV["CONFIG"]}..."; STDOUT.flush; sleep 0.1 until File.exist?(ENV["CONFIG"]); puts "Found #{ENV["CONFIG"]}"
+ 21389     0.0 B  8908.0 K  9468.0 K    13.9 M root       /usr/local/bin/ruby -e puts "Waiting for #{ENV["CONFIG"]}..."; STDOUT.flush; sleep 0.1 until File.exist?(ENV["CONFIG"]); puts "Found #{ENV["CONFIG"]}"
+  5483     0.0 B  3356.0 K  7440.0 K    12.8 M haproxy    /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -p /var/run/haproxy.pid
+   654     0.0 B  3576.0 K  5087.0 K    10.6 M root       /usr/bin/VGAuthService
+   619     0.0 B  4580.0 K  4773.0 K  7480.0 K root       /bin/bash /usr/local/share/enterprise/ghe-welcome
+   655     0.0 B  2588.0 K  4343.0 K    10.7 M root       /usr/bin/vmtoolsd
+  1841     0.0 B  3184.0 K  3606.0 K  5804.0 K root       /usr/bin/rrdcached -m 777 -l unix:/var/run/rrdcached.sock -F -b /var/lib/collectd/rrd/ -B -z 150 -w 300 -p /var/run/rrdcached.pid
+     1     0.0 B  1408.0 K  2855.0 K  7344.0 K root       /sbin/init text
+   344     0.0 B  2652.0 K  2757.0 K  4824.0 K root       /lib/systemd/systemd-udevd
+  1863     0.0 B  2464.0 K  2526.0 K  3984.0 K root       /usr/sbin/ipwatchd -c /etc/ipwatchd.conf
+   553     0.0 B  1864.0 K  2036.0 K  4152.0 K root       /sbin/lvmetad -f
+ 18547     0.0 B   932.0 K  1931.0 K  6360.0 K admin      /lib/systemd/systemd --user
+  1606     0.0 B  1860.0 K  1885.0 K  3068.0 K root       /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+ 18548     0.0 B   968.0 K  1574.0 K  3484.0 K admin      (sd-pam)
+ 18217     0.0 B   252.0 K  1542.0 K  6956.0 K root       sshd: admin [priv]
+  1760     0.0 B  1432.0 K  1526.0 K  3584.0 K _chrony    /usr/sbin/chronyd
+ 18508     0.0 B   176.0 K  1487.0 K  6928.0 K root       sshd: admin [priv]
+ 18704     0.0 B   512.0 K  1409.0 K  5352.0 K admin      sshd: admin@pts/0
+  1809     0.0 B   756.0 K  1365.0 K  5708.0 K root       /usr/sbin/sshd -D
+   697     0.0 B   976.0 K  1219.0 K  3812.0 K messagebus /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+   683     0.0 B   768.0 K  1184.0 K  4700.0 K root       /lib/systemd/systemd-logind
+  1813     0.0 B   976.0 K  1140.0 K  2792.0 K dnsmasq    /usr/sbin/dnsmasq -x /run/dnsmasq/dnsmasq.pid -u dnsmasq -I lo -7 /etc/dnsmasq.d,.dpkg-dist,.dpkg-old,.dpkg-new --local-service
+ 19194     0.0 B   248.0 K  1110.0 K  4700.0 K admin      sshd: admin@notty
+ 18927     0.0 B   776.0 K   969.0 K  3672.0 K admin      -bash
+ 27259     0.0 B   496.0 K   890.0 K  3772.0 K root       sudo smemstat -l
+ 27153     0.0 B   480.0 K   864.0 K  3744.0 K root       sudo -u root /usr/local/bin/ghe-diagnostics 2>&1
+ 24100     0.0 B   364.0 K   575.0 K  3480.0 K root       /bin/bash /usr/local/share/enterprise/ghe-consul-register grafana-server --port 8001 --check --http http://localhost:8001/api/health --interval 15s
+ 24693     0.0 B   364.0 K   561.0 K  3288.0 K root       /bin/bash /usr/local/share/enterprise/ghe-consul-register enterprise-manage --port 1336 --check --http http://localhost:1336/setup/unlock --interval 15s
+ 27157     0.0 B   360.0 K   559.0 K  3040.0 K root       /bin/bash /usr/local/bin/ghe-diagnostics 2>&1
+   740     0.0 B   348.0 K   442.0 K  2936.0 K root       /usr/sbin/cron -f
+ 28376     0.0 B   116.0 K   415.0 K  3404.0 K root       /bin/bash /usr/local/share/enterprise/ghe-welcome-journal 17
+ 28379     0.0 B   156.0 K   406.0 K  2508.0 K root       /bin/bash /usr/local/share/enterprise/ghe-welcome-journal 17
+ 27261     0.0 B   308.0 K   367.0 K  2148.0 K root       smemstat -l
+ 27260     0.0 B   236.0 K   303.0 K  2220.0 K root       sed s/\s\+$//g
+ 19265     0.0 B   212.0 K   246.0 K  1772.0 K admin      /usr/lib/openssh/sftp-server
+   786     0.0 B   108.0 K   177.0 K  1788.0 K rdnssd     /sbin/rdnssd -u rdnssd -H /etc/rdnssd/merge-hook
+ 27229     0.0 B    80.0 K   148.0 K  1664.0 K root       sleep 0.2
+ 27255     0.0 B    76.0 K   147.0 K  1776.0 K root       sleep 0.2
+   784     0.0 B    64.0 K   114.0 K   964.0 K root       /sbin/rdnssd -u rdnssd -H /etc/rdnssd/merge-hook
+  1804     0.0 B    92.0 K   108.0 K   924.0 K root       /usr/sbin/collectdmon -P /var/run/collectdmon.pid -- -C /etc/collectd/collectd.conf
+Total:     0.0 B   339.0 M   474.2 M   839.8 M
+
+
+HYPERVISOR MEMORY
+-------------------
+Ballooned: 0 MB
+Swapped:   0 MB
+
+
+====================================
+ KERNEL
+====================================
+Linux localhost 4.9.0-16-amd64 #1 SMP Debian 4.9.272-2 (2021-07-19) x86_64 GNU/Linux
+BOOT_IMAGE=/boot/vmlinuz-4.9.0-16-amd64 root=UUID=81aa9499-89f8-4f80-84ca-1d019f24de9f ro text transparent_hugepage=madvise systemd.show_status=no net.ifnames=0
+
+
+====================================
+ CPU
+====================================
+Architecture:          x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                8
+On-line CPU(s) list:   0-7
+Thread(s) per core:    1
+Core(s) per socket:    4
+Socket(s):             2
+NUMA node(s):          1
+Vendor ID:             GenuineIntel
+CPU family:            6
+Model:                 85
+Model name:            Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+Stepping:              4
+CPU MHz:               2094.059
+BogoMIPS:              4190.15
+Hypervisor vendor:     VMware
+Virtualization type:   full
+L1d cache:             32K
+L1i cache:             32K
+L2 cache:              1024K
+L3 cache:              16896K
+NUMA node0 CPU(s):     0-7
+Flags:                 fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts mmx fxsr sse sse2 ss ht syscall nx pdpe1gb rdtscp lm constant_tsc arch_perfmon pebs bts nopl xtopology tsc_reliable nonstop_tsc pni pclmulqdq ssse3 fma cx16 pcid sse4_1 sse4_2 x2apic movbe popcnt tsc_deadline_timer aes xsave avx f16c rdrand hypervisor lahf_lm abm 3dnowprefetch invpcid_single ssbd ibrs ibpb stibp kaiser fsgsbase tsc_adjust bmi1 hle avx2 smep bmi2 invpcid rtm rdseed adx smap xsaveopt arat flush_l1d arch_capabilities
+
+Individual CPU Info
+-------------------
+model name	: Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+model name	: Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+model name	: Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+model name	: Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+model name	: Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+model name	: Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+model name	: Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+model name	: Intel(R) Xeon(R) Silver 4116 CPU @ 2.10GHz
+
+Interrupts
+-------------------
+           CPU0       CPU1       CPU2       CPU3       CPU4       CPU5       CPU6       CPU7       
+  0:         11          0          0          0          0          0          0          0   IO-APIC   2-edge      timer
+  1:         10          0          0          0          0          0          0          0   IO-APIC   1-edge      i8042
+  8:          1          0          0          0          0          0          0          0   IO-APIC   8-edge      rtc0
+  9:          0          0          0          0          0          0          0          0   IO-APIC   9-fasteoi   acpi
+ 12:         16          0          0          0          0          0          0          0   IO-APIC  12-edge      i8042
+ 14:          0          0          0          0          0          0          0          0   IO-APIC  14-edge      ata_piix
+ 15:          0          0          0          0          0          0          0          0   IO-APIC  15-edge      ata_piix
+ 16:          1          0          0          0          0          0          0          0   IO-APIC  16-fasteoi   vmwgfx
+ 24:          0          0          0          0          0          0          0          0   PCI-MSI 344064-edge      PCIe PME, pciehp
+ 25:          0          0          0          0          0          0          0          0   PCI-MSI 346112-edge      PCIe PME, pciehp
+ 26:          0          0          0          0          0          0          0          0   PCI-MSI 348160-edge      PCIe PME, pciehp
+ 27:          0          0          0          0          0          0          0          0   PCI-MSI 350208-edge      PCIe PME, pciehp
+ 28:          0          0          0          0          0          0          0          0   PCI-MSI 352256-edge      PCIe PME, pciehp
+ 29:          0          0          0          0          0          0          0          0   PCI-MSI 354304-edge      PCIe PME, pciehp
+ 30:          0          0          0          0          0          0          0          0   PCI-MSI 356352-edge      PCIe PME, pciehp
+ 31:          0          0          0          0          0          0          0          0   PCI-MSI 358400-edge      PCIe PME, pciehp
+ 32:          0          0          0          0          0          0          0          0   PCI-MSI 360448-edge      PCIe PME, pciehp
+ 33:          0          0          0          0          0          0          0          0   PCI-MSI 362496-edge      PCIe PME, pciehp
+ 34:          0          0          0          0          0          0          0          0   PCI-MSI 364544-edge      PCIe PME, pciehp
+ 35:          0          0          0          0          0          0          0          0   PCI-MSI 366592-edge      PCIe PME, pciehp
+ 36:          0          0          0          0          0          0          0          0   PCI-MSI 368640-edge      PCIe PME, pciehp
+ 37:          0          0          0          0          0          0          0          0   PCI-MSI 370688-edge      PCIe PME, pciehp
+ 38:          0          0          0          0          0          0          0          0   PCI-MSI 372736-edge      PCIe PME, pciehp
+ 39:          0          0          0          0          0          0          0          0   PCI-MSI 374784-edge      PCIe PME, pciehp
+ 40:          0          0          0          0          0          0          0          0   PCI-MSI 376832-edge      PCIe PME, pciehp
+ 41:          0          0          0          0          0          0          0          0   PCI-MSI 378880-edge      PCIe PME, pciehp
+ 42:          0          0          0          0          0          0          0          0   PCI-MSI 380928-edge      PCIe PME, pciehp
+ 43:          0          0          0          0          0          0          0          0   PCI-MSI 382976-edge      PCIe PME, pciehp
+ 44:          0          0          0          0          0          0          0          0   PCI-MSI 385024-edge      PCIe PME, pciehp
+ 45:          0          0          0          0          0          0          0          0   PCI-MSI 387072-edge      PCIe PME, pciehp
+ 46:          0          0          0          0          0          0          0          0   PCI-MSI 389120-edge      PCIe PME, pciehp
+ 47:          0          0          0          0          0          0          0          0   PCI-MSI 391168-edge      PCIe PME, pciehp
+ 48:          0          0          0          0          0          0          0          0   PCI-MSI 393216-edge      PCIe PME, pciehp
+ 49:          0          0          0          0          0          0          0          0   PCI-MSI 395264-edge      PCIe PME, pciehp
+ 50:          0          0          0          0          0          0          0          0   PCI-MSI 397312-edge      PCIe PME, pciehp
+ 51:          0          0          0          0          0          0          0          0   PCI-MSI 399360-edge      PCIe PME, pciehp
+ 52:          0          0          0          0          0          0          0          0   PCI-MSI 401408-edge      PCIe PME, pciehp
+ 53:          0          0          0          0          0          0          0          0   PCI-MSI 403456-edge      PCIe PME, pciehp
+ 54:          0          0          0          0          0          0          0          0   PCI-MSI 405504-edge      PCIe PME, pciehp
+ 55:          0          0          0          0          0          0          0          0   PCI-MSI 407552-edge      PCIe PME, pciehp
+ 56:     331610          0          0          0          0          0          0          0   PCI-MSI 5767168-edge      eth0-rxtx-0
+ 57:       5076          0          0          0          0          0          0          0   PCI-MSI 5767169-edge      eth0-rxtx-1
+ 58:       4010          0          0          0          0          0          0          0   PCI-MSI 5767170-edge      eth0-rxtx-2
+ 59:       6642          0          0          0          0          0          0          0   PCI-MSI 5767171-edge      eth0-rxtx-3
+ 60:       3203          0          0          0          0          0          0          0   PCI-MSI 5767172-edge      eth0-rxtx-4
+ 61:       2132          0          0          0          0          0          0          0   PCI-MSI 5767173-edge      eth0-rxtx-5
+ 62:       5364          0          0          0          0          0          0          0   PCI-MSI 5767174-edge      eth0-rxtx-6
+ 63:       2558          0          0          0          0          0          0          0   PCI-MSI 5767175-edge      eth0-rxtx-7
+ 64:          0          0          0          0          0          0          0          0   PCI-MSI 5767176-edge      eth0-event-8
+ 65:    3400617          0          0          0          0          0          0          0   PCI-MSI 1572864-edge      vmw_pvscsi
+ 66:      26972          0          0          0          0          0          0          0   PCI-MSI 129024-edge      vmw_vmci
+ 67:          0          0          0          0          0          0          0          0   PCI-MSI 129025-edge      vmw_vmci
+NMI:          0          0          0          0          0          0          0          0   Non-maskable interrupts
+LOC:   21263707   21533899   20643727   33858361   20992874   21017649   21002235   20978293   Local timer interrupts
+SPU:          0          0          0          0          0          0          0          0   Spurious interrupts
+PMI:          0          0          0          0          0          0          0          0   Performance monitoring interrupts
+IWI:          3          0          0          0          0          0          0          0   IRQ work interrupts
+RTR:          0          0          0          0          0          0          0          0   APIC ICR read retries
+RES:   16896528   16509633   16343816   16601568   16466671   16573063   16593747   16600302   Rescheduling interrupts
+CAL:    9805932    9753274    9549077   10725096   10543101   10541154   10457926   10462176   Function call interrupts
+TLB:    9650477    9593937    9386367   10589387    9961412    9969992    9906494    9894037   TLB shootdowns
+TRM:          0          0          0          0          0          0          0          0   Thermal event interrupts
+THR:          0          0          0          0          0          0          0          0   Threshold APIC interrupts
+DFR:          0          0          0          0          0          0          0          0   Deferred Error APIC interrupts
+MCE:          0          0          0          0          0          0          0          0   Machine check exceptions
+MCP:        578        578        578        578        578        578        578        578   Machine check polls
+ERR:          0
+MIS:          0
+PIN:          0          0          0          0          0          0          0          0   Posted-interrupt notification event
+PIW:          0          0          0          0          0          0          0          0   Posted-interrupt wakeup event
+
+SMP affinity list
+-------------------
+0/smp_affinity_list:0-7
+1/smp_affinity_list:0-7
+2/smp_affinity_list:0-7
+3/smp_affinity_list:0-7
+4/smp_affinity_list:0-7
+5/smp_affinity_list:0-7
+6/smp_affinity_list:0-7
+7/smp_affinity_list:0-7
+8/smp_affinity_list:0-7
+9/smp_affinity_list:0-7
+10/smp_affinity_list:0-7
+11/smp_affinity_list:0-7
+12/smp_affinity_list:0-7
+13/smp_affinity_list:0-7
+14/smp_affinity_list:0-7
+15/smp_affinity_list:0-7
+16/smp_affinity_list:0-7
+24/smp_affinity_list:0-7
+25/smp_affinity_list:0-7
+26/smp_affinity_list:0-7
+27/smp_affinity_list:0-7
+28/smp_affinity_list:0-7
+29/smp_affinity_list:0-7
+30/smp_affinity_list:0-7
+31/smp_affinity_list:0-7
+32/smp_affinity_list:0-7
+33/smp_affinity_list:0-7
+34/smp_affinity_list:0-7
+35/smp_affinity_list:0-7
+36/smp_affinity_list:0-7
+37/smp_affinity_list:0-7
+38/smp_affinity_list:0-7
+39/smp_affinity_list:0-7
+40/smp_affinity_list:0-7
+41/smp_affinity_list:0-7
+42/smp_affinity_list:0-7
+43/smp_affinity_list:0-7
+44/smp_affinity_list:0-7
+45/smp_affinity_list:0-7
+46/smp_affinity_list:0-7
+47/smp_affinity_list:0-7
+48/smp_affinity_list:0-7
+49/smp_affinity_list:0-7
+50/smp_affinity_list:0-7
+51/smp_affinity_list:0-7
+52/smp_affinity_list:0-7
+53/smp_affinity_list:0-7
+54/smp_affinity_list:0-7
+55/smp_affinity_list:0-7
+56/smp_affinity_list:0-7
+57/smp_affinity_list:0-7
+58/smp_affinity_list:0-7
+59/smp_affinity_list:0-7
+60/smp_affinity_list:0-7
+61/smp_affinity_list:0-7
+62/smp_affinity_list:0-7
+63/smp_affinity_list:0-7
+64/smp_affinity_list:0-7
+65/smp_affinity_list:0-7
+66/smp_affinity_list:0-7
+67/smp_affinity_list:0-7
+
+CPU features
+-------------------
+SSSE3 Enabled: true
+
+
+====================================
+ NETWORK SETTINGS
+====================================
+
+IFCONFIG
+-------------------
+eth0: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
+        inet 10.99.99.154  netmask 255.255.255.0  broadcast 10.99.99.255
+        inet6 fe80::250:56ff:fea9:fd8  prefixlen 64  scopeid 0x20<link>
+        ether 00:50:56:a9:0f:d8  txqueuelen 1000  (Ethernet)
+        RX packets 425973  bytes 26993055 (25.7 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 14096  bytes 11212363 (10.6 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
+        inet 127.0.0.1  netmask 255.0.0.0
+        inet6 ::1  prefixlen 128  scopeid 0x10<host>
+        loop  txqueuelen 1  (Local Loopback)
+        RX packets 3513247  bytes 175674893 (167.5 MiB)
+        RX errors 0  dropped 0  overruns 0  frame 0
+        TX packets 3513247  bytes 175674893 (167.5 MiB)
+        TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
+
+
+HTTP PROXY
+-------------------
+   Enabled: false
+
+ROUTE
+-------------------
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
+0.0.0.0         10.99.99.1      0.0.0.0         UG    0      0        0 eth0
+10.99.99.0      0.0.0.0         255.255.255.0   U     0      0        0 eth0
+
+ROUTE (IPv6)
+-------------------
+Kernel IPv6 routing table
+Destination                    Next Hop                   Flag Met Ref Use If
+fe80::/64                      ::                         U    256 0     0 eth0
+::/0                           ::                         !n   -1  1    77 lo
+::1/128                        ::                         Un   0   9 35702 lo
+fe80::250:56ff:fea9:fd8/128    ::                         Un   0   1     0 lo
+ff00::/8                       ::                         U    256 1     1 eth0
+::/0                           ::                         !n   -1  1    77 lo
+
+IPTABLES
+-------------------
+# Generated by iptables-save v1.6.0 on Wed Feb 16 09:32:50 2022
+*nat
+:PREROUTING ACCEPT [6624:1136107]
+:INPUT ACCEPT [392:25060]
+:OUTPUT ACCEPT [1714534:102886548]
+:POSTROUTING ACCEPT [1714534:102886548]
+:DOCKER - [0:0]
+COMMIT
+# Completed on Wed Feb 16 09:32:50 2022
+# Generated by iptables-save v1.6.0 on Wed Feb 16 09:32:50 2022
+*filter
+:INPUT DROP [2:72]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [4:336]
+:DOCKER - [0:0]
+:DOCKER-ISOLATION-STAGE-1 - [0:0]
+:DOCKER-ISOLATION-STAGE-2 - [0:0]
+:DOCKER-USER - [0:0]
+:ufw-after-forward - [0:0]
+:ufw-after-input - [0:0]
+:ufw-after-logging-forward - [0:0]
+:ufw-after-logging-input - [0:0]
+:ufw-after-logging-output - [0:0]
+:ufw-after-output - [0:0]
+:ufw-before-forward - [0:0]
+:ufw-before-input - [0:0]
+:ufw-before-logging-forward - [0:0]
+:ufw-before-logging-input - [0:0]
+:ufw-before-logging-output - [0:0]
+:ufw-before-output - [0:0]
+:ufw-logging-allow - [0:0]
+:ufw-logging-deny - [0:0]
+:ufw-not-local - [0:0]
+:ufw-reject-forward - [0:0]
+:ufw-reject-input - [0:0]
+:ufw-reject-output - [0:0]
+:ufw-skip-to-policy-forward - [0:0]
+:ufw-skip-to-policy-input - [0:0]
+:ufw-skip-to-policy-output - [0:0]
+:ufw-track-forward - [0:0]
+:ufw-track-input - [0:0]
+:ufw-track-output - [0:0]
+:ufw-user-forward - [0:0]
+:ufw-user-input - [0:0]
+:ufw-user-limit - [0:0]
+:ufw-user-limit-accept - [0:0]
+:ufw-user-logging-forward - [0:0]
+:ufw-user-logging-input - [0:0]
+:ufw-user-logging-output - [0:0]
+:ufw-user-output - [0:0]
+-A INPUT -j ufw-before-logging-input
+-A INPUT -j ufw-before-input
+-A INPUT -j ufw-after-input
+-A INPUT -j ufw-after-logging-input
+-A INPUT -j ufw-reject-input
+-A INPUT -j ufw-track-input
+-A FORWARD -j DOCKER-USER
+-A FORWARD -j ufw-before-logging-forward
+-A FORWARD -j ufw-before-forward
+-A FORWARD -j ufw-after-forward
+-A FORWARD -j ufw-after-logging-forward
+-A FORWARD -j ufw-reject-forward
+-A FORWARD -j ufw-track-forward
+-A OUTPUT -j ufw-before-logging-output
+-A OUTPUT -j ufw-before-output
+-A OUTPUT -j ufw-after-output
+-A OUTPUT -j ufw-after-logging-output
+-A OUTPUT -j ufw-reject-output
+-A OUTPUT -j ufw-track-output
+-A DOCKER-ISOLATION-STAGE-1 -j RETURN
+-A DOCKER-ISOLATION-STAGE-2 -j RETURN
+-A DOCKER-USER -j RETURN
+-A ufw-after-input -p udp -m udp --dport 137 -j ufw-skip-to-policy-input
+-A ufw-after-input -p udp -m udp --dport 138 -j ufw-skip-to-policy-input
+-A ufw-after-input -p tcp -m tcp --dport 139 -j ufw-skip-to-policy-input
+-A ufw-after-input -p tcp -m tcp --dport 445 -j ufw-skip-to-policy-input
+-A ufw-after-input -p udp -m udp --dport 67 -j ufw-skip-to-policy-input
+-A ufw-after-input -p udp -m udp --dport 68 -j ufw-skip-to-policy-input
+-A ufw-after-input -m addrtype --dst-type BROADCAST -j ufw-skip-to-policy-input
+-A ufw-after-logging-forward -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW BLOCK] "
+-A ufw-after-logging-input -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW BLOCK] "
+-A ufw-before-forward -i tun0 -o tun0 -j ACCEPT
+-A ufw-before-forward -j ufw-user-forward
+-A ufw-before-input -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A ufw-before-input -i lo -j ACCEPT
+-A ufw-before-input -i tun0 -j ACCEPT
+-A ufw-before-input -p icmp -m icmp --icmp-type 3 -j ACCEPT
+-A ufw-before-input -p icmp -m icmp --icmp-type 4 -j ACCEPT
+-A ufw-before-input -p icmp -m icmp --icmp-type 11 -j ACCEPT
+-A ufw-before-input -p icmp -m icmp --icmp-type 12 -j ACCEPT
+-A ufw-before-input -p icmp -m icmp --icmp-type 8 -j ACCEPT
+-A ufw-before-input -p udp -m udp --sport 67 --dport 68 -j ACCEPT
+-A ufw-before-input -j ufw-not-local
+-A ufw-before-input -d 224.0.0.251/32 -p udp -m udp --dport 5353 -j ACCEPT
+-A ufw-before-input -d 239.255.255.250/32 -p udp -m udp --dport 1900 -j ACCEPT
+-A ufw-before-input -j ufw-user-input
+-A ufw-before-output -d 169.254.169.254/32 -p tcp -m state --state NEW -m owner --uid-owner 607 -j REJECT --reject-with icmp-port-unreachable
+-A ufw-before-output -d 169.254.169.254/32 -p tcp -m state --state NEW -m owner --uid-owner 609 -j REJECT --reject-with icmp-port-unreachable
+-A ufw-before-output -d 169.254.169.254/32 -p tcp -m state --state NEW -m owner --uid-owner 619 -j REJECT --reject-with icmp-port-unreachable
+-A ufw-before-output -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A ufw-before-output -o lo -p tcp -m multiport --dports 80,443,5014 -j ACCEPT
+-A ufw-before-output -o lo -p udp -m multiport --dports 53,8125 -j ACCEPT
+-A ufw-before-output -o lo -m owner --uid-owner 609 -j REJECT --reject-with icmp-port-unreachable
+-A ufw-before-output -o lo -m owner --uid-owner 607 -j REJECT --reject-with icmp-port-unreachable
+-A ufw-before-output -o lo -m owner --uid-owner 619 -j REJECT --reject-with icmp-port-unreachable
+-A ufw-before-output -o tun0 -p tcp -m multiport --dports 80,443,5014 -j ACCEPT
+-A ufw-before-output -o tun0 -p udp -m multiport --dports 53,8125 -j ACCEPT
+-A ufw-before-output -o tun0 -m owner --uid-owner 609 -j REJECT --reject-with icmp-port-unreachable
+-A ufw-before-output -o tun0 -m owner --uid-owner 607 -j REJECT --reject-with icmp-port-unreachable
+-A ufw-before-output -o tun0 -m owner --uid-owner 619 -j REJECT --reject-with icmp-port-unreachable
+-A ufw-before-output -o lo -j ACCEPT
+-A ufw-before-output -o tun0 -j ACCEPT
+-A ufw-before-output -j ufw-user-output
+-A ufw-logging-allow -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW ALLOW] "
+-A ufw-logging-deny -m conntrack --ctstate INVALID -m limit --limit 3/min --limit-burst 10 -j RETURN
+-A ufw-logging-deny -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW BLOCK] "
+-A ufw-not-local -m addrtype --dst-type LOCAL -j RETURN
+-A ufw-not-local -m addrtype --dst-type MULTICAST -j RETURN
+-A ufw-not-local -m addrtype --dst-type BROADCAST -j RETURN
+-A ufw-not-local -m limit --limit 3/min --limit-burst 10 -j ufw-logging-deny
+-A ufw-not-local -j DROP
+-A ufw-skip-to-policy-forward -j DROP
+-A ufw-skip-to-policy-input -j DROP
+-A ufw-skip-to-policy-output -j ACCEPT
+-A ufw-track-output -p tcp -m conntrack --ctstate NEW -j ACCEPT
+-A ufw-track-output -p udp -m conntrack --ctstate NEW -j ACCEPT
+-A ufw-user-input -p udp -m udp --dport 1194 -m comment --comment "\'dapp_ghe-1194\'" -j ACCEPT
+-A ufw-user-input -p tcp -m tcp --dport 122 -m comment --comment "\'dapp_ghe-122\'" -j ACCEPT
+-A ufw-user-input -p udp -m udp --dport 161 -m comment --comment "\'dapp_ghe-161\'" -j ACCEPT
+-A ufw-user-input -p tcp -m tcp --dport 22 -m comment --comment "\'dapp_ghe-22\'" -j ACCEPT
+-A ufw-user-input -p tcp -m tcp --dport 25 -m comment --comment "\'dapp_ghe-25\'" -j ACCEPT
+-A ufw-user-input -p tcp -m tcp --dport 443 -m comment --comment "\'dapp_ghe-443\'" -j ACCEPT
+-A ufw-user-input -p tcp -m tcp --dport 80 -m comment --comment "\'dapp_ghe-80\'" -j ACCEPT
+-A ufw-user-input -p tcp -m tcp --dport 8080 -m comment --comment "\'dapp_ghe-8080\'" -j ACCEPT
+-A ufw-user-input -p tcp -m tcp --dport 8443 -m comment --comment "\'dapp_ghe-8443\'" -j ACCEPT
+-A ufw-user-input -p tcp -m tcp --dport 9418 -m comment --comment "\'dapp_ghe-9418\'" -j ACCEPT
+-A ufw-user-limit -m limit --limit 3/min -j LOG --log-prefix "[UFW LIMIT BLOCK] "
+-A ufw-user-limit -j REJECT --reject-with icmp-port-unreachable
+-A ufw-user-limit-accept -j ACCEPT
+COMMIT
+# Completed on Wed Feb 16 09:32:50 2022
+
+IPTABLES (IPv6)
+-------------------
+# Generated by ip6tables-save v1.6.0 on Wed Feb 16 09:32:50 2022
+*filter
+:INPUT DROP [0:0]
+:FORWARD DROP [0:0]
+:OUTPUT ACCEPT [62:3552]
+:ufw6-after-forward - [0:0]
+:ufw6-after-input - [0:0]
+:ufw6-after-logging-forward - [0:0]
+:ufw6-after-logging-input - [0:0]
+:ufw6-after-logging-output - [0:0]
+:ufw6-after-output - [0:0]
+:ufw6-before-forward - [0:0]
+:ufw6-before-input - [0:0]
+:ufw6-before-logging-forward - [0:0]
+:ufw6-before-logging-input - [0:0]
+:ufw6-before-logging-output - [0:0]
+:ufw6-before-output - [0:0]
+:ufw6-logging-allow - [0:0]
+:ufw6-logging-deny - [0:0]
+:ufw6-reject-forward - [0:0]
+:ufw6-reject-input - [0:0]
+:ufw6-reject-output - [0:0]
+:ufw6-skip-to-policy-forward - [0:0]
+:ufw6-skip-to-policy-input - [0:0]
+:ufw6-skip-to-policy-output - [0:0]
+:ufw6-track-forward - [0:0]
+:ufw6-track-input - [0:0]
+:ufw6-track-output - [0:0]
+:ufw6-user-forward - [0:0]
+:ufw6-user-input - [0:0]
+:ufw6-user-limit - [0:0]
+:ufw6-user-limit-accept - [0:0]
+:ufw6-user-logging-forward - [0:0]
+:ufw6-user-logging-input - [0:0]
+:ufw6-user-logging-output - [0:0]
+:ufw6-user-output - [0:0]
+-A INPUT -j ufw6-before-logging-input
+-A INPUT -j ufw6-before-input
+-A INPUT -j ufw6-after-input
+-A INPUT -j ufw6-after-logging-input
+-A INPUT -j ufw6-reject-input
+-A INPUT -j ufw6-track-input
+-A FORWARD -j ufw6-before-logging-forward
+-A FORWARD -j ufw6-before-forward
+-A FORWARD -j ufw6-after-forward
+-A FORWARD -j ufw6-after-logging-forward
+-A FORWARD -j ufw6-reject-forward
+-A FORWARD -j ufw6-track-forward
+-A OUTPUT -j ufw6-before-logging-output
+-A OUTPUT -j ufw6-before-output
+-A OUTPUT -j ufw6-after-output
+-A OUTPUT -j ufw6-after-logging-output
+-A OUTPUT -j ufw6-reject-output
+-A OUTPUT -j ufw6-track-output
+-A ufw6-after-input -p udp -m udp --dport 137 -j ufw6-skip-to-policy-input
+-A ufw6-after-input -p udp -m udp --dport 138 -j ufw6-skip-to-policy-input
+-A ufw6-after-input -p tcp -m tcp --dport 139 -j ufw6-skip-to-policy-input
+-A ufw6-after-input -p tcp -m tcp --dport 445 -j ufw6-skip-to-policy-input
+-A ufw6-after-input -p udp -m udp --dport 546 -j ufw6-skip-to-policy-input
+-A ufw6-after-input -p udp -m udp --dport 547 -j ufw6-skip-to-policy-input
+-A ufw6-after-logging-forward -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW BLOCK] "
+-A ufw6-after-logging-input -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW BLOCK] "
+-A ufw6-before-forward -i tun0 -o tun0 -j ACCEPT
+-A ufw6-before-forward -m rt --rt-type 0 -j DROP
+-A ufw6-before-forward -j ufw6-user-forward
+-A ufw6-before-input -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A ufw6-before-input -i lo -j ACCEPT
+-A ufw6-before-input -i tun0 -j ACCEPT
+-A ufw6-before-input -m rt --rt-type 0 -j DROP
+-A ufw6-before-input -p ipv6-icmp -m icmp6 --icmpv6-type 135 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-input -p ipv6-icmp -m icmp6 --icmpv6-type 136 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-input -p ipv6-icmp -m icmp6 --icmpv6-type 133 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-input -p ipv6-icmp -m icmp6 --icmpv6-type 134 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-input -s fe80::/10 -p ipv6-icmp -m icmp6 --icmpv6-type 129 -j ACCEPT
+-A ufw6-before-input -p ipv6-icmp -m icmp6 --icmpv6-type 1 -j ACCEPT
+-A ufw6-before-input -p ipv6-icmp -m icmp6 --icmpv6-type 2 -j ACCEPT
+-A ufw6-before-input -p ipv6-icmp -m icmp6 --icmpv6-type 3 -j ACCEPT
+-A ufw6-before-input -p ipv6-icmp -m icmp6 --icmpv6-type 4 -j ACCEPT
+-A ufw6-before-input -p ipv6-icmp -m icmp6 --icmpv6-type 128 -j ACCEPT
+-A ufw6-before-input -s fe80::/10 -d fe80::/10 -p udp -m udp --sport 547 --dport 546 -j ACCEPT
+-A ufw6-before-input -d ff02::fb/128 -p udp -m udp --dport 5353 -j ACCEPT
+-A ufw6-before-input -d ff02::f/128 -p udp -m udp --dport 1900 -j ACCEPT
+-A ufw6-before-input -j ufw6-user-input
+-A ufw6-before-output -m state --state RELATED,ESTABLISHED -j ACCEPT
+-A ufw6-before-output -o lo -p tcp -m multiport --dports 80,443,5014 -j ACCEPT
+-A ufw6-before-output -o lo -p udp -m multiport --dports 53,8125 -j ACCEPT
+-A ufw6-before-output -o lo -m owner --uid-owner 609 -j REJECT --reject-with icmp6-port-unreachable
+-A ufw6-before-output -o lo -m owner --uid-owner 607 -j REJECT --reject-with icmp6-port-unreachable
+-A ufw6-before-output -o lo -m owner --uid-owner 619 -j REJECT --reject-with icmp6-port-unreachable
+-A ufw6-before-output -o tun0 -p tcp -m multiport --dports 80,443,5014 -j ACCEPT
+-A ufw6-before-output -o tun0 -p udp -m multiport --dports 53,8125 -j ACCEPT
+-A ufw6-before-output -o tun0 -m owner --uid-owner 609 -j REJECT --reject-with icmp6-port-unreachable
+-A ufw6-before-output -o tun0 -m owner --uid-owner 607 -j REJECT --reject-with icmp6-port-unreachable
+-A ufw6-before-output -o tun0 -m owner --uid-owner 619 -j REJECT --reject-with icmp6-port-unreachable
+-A ufw6-before-output -o lo -j ACCEPT
+-A ufw6-before-output -o tun0 -j ACCEPT
+-A ufw6-before-output -m rt --rt-type 0 -j DROP
+-A ufw6-before-output -p ipv6-icmp -m icmp6 --icmpv6-type 135 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-output -p ipv6-icmp -m icmp6 --icmpv6-type 136 -m hl --hl-eq 255 -j ACCEPT
+-A ufw6-before-output -j ufw6-user-output
+-A ufw6-logging-allow -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW ALLOW] "
+-A ufw6-logging-deny -m conntrack --ctstate INVALID -m limit --limit 3/min --limit-burst 10 -j RETURN
+-A ufw6-logging-deny -m limit --limit 3/min --limit-burst 10 -j LOG --log-prefix "[UFW BLOCK] "
+-A ufw6-skip-to-policy-forward -j DROP
+-A ufw6-skip-to-policy-input -j DROP
+-A ufw6-skip-to-policy-output -j ACCEPT
+-A ufw6-track-output -p tcp -m conntrack --ctstate NEW -j ACCEPT
+-A ufw6-track-output -p udp -m conntrack --ctstate NEW -j ACCEPT
+-A ufw6-user-input -p udp -m udp --dport 1194 -m comment --comment "\'dapp_ghe-1194\'" -j ACCEPT
+-A ufw6-user-input -p tcp -m tcp --dport 122 -m comment --comment "\'dapp_ghe-122\'" -j ACCEPT
+-A ufw6-user-input -p udp -m udp --dport 161 -m comment --comment "\'dapp_ghe-161\'" -j ACCEPT
+-A ufw6-user-input -p tcp -m tcp --dport 22 -m comment --comment "\'dapp_ghe-22\'" -j ACCEPT
+-A ufw6-user-input -p tcp -m tcp --dport 25 -m comment --comment "\'dapp_ghe-25\'" -j ACCEPT
+-A ufw6-user-input -p tcp -m tcp --dport 443 -m comment --comment "\'dapp_ghe-443\'" -j ACCEPT
+-A ufw6-user-input -p tcp -m tcp --dport 80 -m comment --comment "\'dapp_ghe-80\'" -j ACCEPT
+-A ufw6-user-input -p tcp -m tcp --dport 8080 -m comment --comment "\'dapp_ghe-8080\'" -j ACCEPT
+-A ufw6-user-input -p tcp -m tcp --dport 8443 -m comment --comment "\'dapp_ghe-8443\'" -j ACCEPT
+-A ufw6-user-input -p tcp -m tcp --dport 9418 -m comment --comment "\'dapp_ghe-9418\'" -j ACCEPT
+-A ufw6-user-limit -m limit --limit 3/min -j LOG --log-prefix "[UFW LIMIT BLOCK] "
+-A ufw6-user-limit -j REJECT --reject-with icmp6-port-unreachable
+-A ufw6-user-limit-accept -j ACCEPT
+COMMIT
+# Completed on Wed Feb 16 09:32:50 2022
+
+NETWORK SERVICES
+-------------------
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name    
+tcp        0      0 0.0.0.0:8080            0.0.0.0:*               LISTEN      5483/haproxy        
+tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      5483/haproxy        
+tcp        0      0 0.0.0.0:53              0.0.0.0:*               LISTEN      1813/dnsmasq        
+tcp        0      0 0.0.0.0:122             0.0.0.0:*               LISTEN      1809/sshd           
+tcp        0      0 0.0.0.0:8443            0.0.0.0:*               LISTEN      5483/haproxy        
+tcp        0      0 0.0.0.0:443             0.0.0.0:*               LISTEN      5483/haproxy        
+tcp6       0      0 :::80                   :::*                    LISTEN      5483/haproxy        
+tcp6       0      0 :::8080                 :::*                    LISTEN      5483/haproxy        
+tcp6       0      0 :::53                   :::*                    LISTEN      1813/dnsmasq        
+tcp6       0      0 :::122                  :::*                    LISTEN      1809/sshd           
+tcp6       0      0 :::443                  :::*                    LISTEN      5483/haproxy        
+tcp6       0      0 :::8443                 :::*                    LISTEN      5483/haproxy        
+tcp6       0      0 :::8001                 :::*                    LISTEN      1743/grafana-server 
+udp        0      0 0.0.0.0:53              0.0.0.0:*                           1813/dnsmasq        
+udp        0      0 0.0.0.0:68              0.0.0.0:*                           1606/dhclient       
+udp        0      0 127.0.0.1:323           0.0.0.0:*                           1760/chronyd        
+udp6       0      0 :::53                   :::*                                1813/dnsmasq        
+udp6       0      0 ::1:323                 :::*                                1760/chronyd        
+Active UNIX domain sockets (only servers)
+Proto RefCnt Flags       Type       State         I-Node   PID/Program name     Path
+unix  2      [ ACC ]     STREAM     LISTENING     542      1/init               /run/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     563      1/init               /run/lvm/lvmpolld.socket
+unix  2      [ ACC ]     STREAM     LISTENING     567      1/init               /run/systemd/journal/stdout
+unix  2      [ ACC ]     STREAM     LISTENING     71227    18547/systemd        /run/user/501/systemd/private
+unix  2      [ ACC ]     STREAM     LISTENING     18747    1841/rrdcached       /var/run/rrdcached.sock
+unix  2      [ ACC ]     STREAM     LISTENING     71232    18547/systemd        /run/user/501/gnupg/S.gpg-agent.ssh
+unix  2      [ ACC ]     STREAM     LISTENING     71235    18547/systemd        /run/user/501/gnupg/S.gpg-agent
+unix  2      [ ACC ]     STREAM     LISTENING     71237    18547/systemd        /run/user/501/gnupg/S.gpg-agent.browser
+unix  2      [ ACC ]     SEQPACKET  LISTENING     581      1/init               /run/udev/control
+unix  2      [ ACC ]     STREAM     LISTENING     71239    18547/systemd        /run/user/501/gnupg/S.gpg-agent.extra
+unix  2      [ ACC ]     STREAM     LISTENING     392011   22732/dockerd        /var/run/docker/libnetwork/862d1de4af29.sock
+unix  2      [ ACC ]     STREAM     LISTENING     25968    5483/haproxy         /var/run/haproxy.sock.5467.tmp
+unix  2      [ ACC ]     STREAM     LISTENING     15748    1/init               /run/lvm/lvmetad.socket
+unix  2      [ ACC ]     STREAM     LISTENING     10889    1/init               /var/run/dbus/system_bus_socket
+unix  2      [ ACC ]     STREAM     LISTENING     17292    1762/containerd      /run/containerd/containerd.sock
+unix  2      [ ACC ]     STREAM     LISTENING     10892    1/init               /var/run/docker.sock
+unix  2      [ ACC ]     STREAM     LISTENING     396702   22732/dockerd        /var/run/docker/metrics.sock
+unix  2      [ ACC ]     STREAM     LISTENING     32859    8657/unicorn master  /data/enterprise-manage/current/tmp/sockets/unicorn.sock
+unix  2      [ ACC ]     STREAM     LISTENING     12187    747/syslog-ng        /var/lib/syslog-ng/syslog-ng.ctl
+unix  2      [ ACC ]     STREAM     LISTENING     16868    654/VGAuthService    /var/run/vmware/guestServicePipe
+unix  2      [ ACC ]     STREAM     LISTENING     17907    1805/collectd        /var/run/collectd.sock
+
+WIREGUARD
+-------------------
+
+
+====================================
+ CONFIGURATION
+====================================
+
+UUID
+-------------------
+14d7d6f8-8d69-11ec-97e0-005056a90fd8
+
+DNS
+-------------------
+# DO NOT CHANGE THIS FILE DIRECTLY. YOUR MODIFICATIONS WILL BE OVERWRITTEN.
+#
+# For static IP configurations, nameservers can be specified via `ghe-setup-network'.
+# For DHCP configurations, nameservers are auto-populated with values provided in the DHCP lease.
+# To add custom options to this file, edit /etc/resolvconf/resolv.conf.d/head and run `sudo service resolvconf restart'.
+#
+# The 127.0.0.1 entry is *required* to be the first entry in the list here. Removing it
+# or having another entry as the first entry will break GitHub Enterprise. It's also not
+# supported to add options that affect the ordering here such as "options rotate".
+#
+nameserver 127.0.0.1
+options ndots:0
+nameserver 10.99.99.200
+options timeout:1
+
+DNS (CUSTOMIZED SETTINGS)
+-------------------
+/etc/resolvconf/resolv.conf.d/head:
+
+# DO NOT CHANGE THIS FILE DIRECTLY. YOUR MODIFICATIONS WILL BE OVERWRITTEN.
+#
+# For static IP configurations, nameservers can be specified via `ghe-setup-network'.
+# For DHCP configurations, nameservers are auto-populated with values provided in the DHCP lease.
+# To add custom options to this file, edit /etc/resolvconf/resolv.conf.d/head and run `sudo service resolvconf restart'.
+#
+# The 127.0.0.1 entry is *required* to be the first entry in the list here. Removing it
+# or having another entry as the first entry will break GitHub Enterprise. It's also not
+# supported to add options that affect the ordering here such as "options rotate".
+#
+nameserver 127.0.0.1
+options ndots:0
+
+/etc/resolvconf/resolv.conf.d/base:
+
+
+/etc/resolvconf/resolv.conf.d/tail:
+
+options timeout:1
+
+DNSMASQ
+-------------------
+-rw-r--r-- 1 root root 162 Dec 11 23:59 /etc/dnsmasq.conf
+
+/etc/dnsmasq.conf:
+listen-address=127.0.0.1
+listen-address=::1
+no-hosts
+addn-hosts=/etc/hosts.dnsmasq
+strict-order
+conf-dir=/etc/dnsmasq.d
+local=//
+server=/ghe.local/127.0.0.1#8600
+
+HOSTNAME
+-------------------
+Hostname: 
+Subdomain isolation: false
+
+HOSTS FILE
+-------------------
+192.168.28.103    gittest.netbrain.com
+127.0.0.1       localhost
+::1     localhost ip6-localhost ip6-loopback
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+DNSMASQ HOSTS FILE
+-------------------
+-rw-r--r-- 1 root root 0 Dec 11 23:59 /etc/hosts.dnsmasq
+
+/etc/hosts.dnsmasq:
+
+SYSTEMD TIME
+-------------------
+      Local time: Wed 2022-02-16 09:32:50 UTC
+  Universal time: Wed 2022-02-16 09:32:50 UTC
+        RTC time: Wed 2022-02-16 09:32:50
+       Time zone: Etc/UTC (UTC, +0000)
+ Network time on: yes
+NTP synchronized: yes
+ RTC in local TZ: no
+
+NTP TIME
+-------------------
+210 Number of sources = 4
+
+  .-- Source mode  '^' = server, '=' = peer, '#' = local clock.
+ / .- Source state '*' = current synced, '+' = combined , '-' = not combined,
+| /   '?' = unreachable, 'x' = time may be in error, '~' = time too variable.
+||                                                 .- xxxx [ yyyy ] +/- zzzz
+||      Reachability register (octal) -.           |  xxxx = adjusted offset,
+||      Log2(Polling interval) --.      |          |  yyyy = measured offset,
+||                                \     |          |  zzzz = estimated error.
+||                                 |    |           \
+MS Name/IP address         Stratum Poll Reach LastRx Last sample               
+===============================================================================
+^- ntp1.as34288.net              2  10   377   175   -904us[ -904us] +/-   57ms
+^- bwntp2pool.bluewin.ch         2  10   377   911   +203us[ +188us] +/-   60ms
+^* ns1.switch.ca                 2  10   377   715  -5554ns[  -21us] +/- 8501us
+^- ip99.mikrocom.sk              2  10   377   816  -1328us[-1343us] +/-   99ms
+210 Number of sources = 4
+                             .- Number of sample points in measurement set.
+                            /    .- Number of residual runs with same sign.
+                           |    /    .- Length of measurement set (time).
+                           |   |    /      .- Est. clock freq error (ppm).
+                           |   |   |      /           .- Est. error in freq.
+                           |   |   |     |           /         .- Est. offset.
+                           |   |   |     |          |          |   On the -.
+                           |   |   |     |          |          |   samples. \
+                           |   |   |     |          |          |             |
+Name/IP Address            NP  NR  Span  Frequency  Freq Skew  Offset  Std Dev
+==============================================================================
+ntp1.as34288.net           36  19   36h     -0.023      0.007   -890us   434us
+bwntp2pool.bluewin.ch      30  14   43h     -0.027      0.014   +236us   637us
+ns1.switch.ca              17  11  275m     +0.000      0.032   +170ns   160us
+ip99.mikrocom.sk           41  20   49h     -0.020      0.014    +17ms  1277us
+Reference ID    : 95387910 (ns1.switch.ca)
+Stratum         : 3
+Ref time (UTC)  : Wed Feb 16 09:20:55 2022
+System time     : 0.000006129 seconds fast of NTP time
+Last offset     : -0.000015375 seconds
+RMS offset      : 0.000070185 seconds
+Frequency       : 6.566 ppm slow
+Residual freq   : +0.000 ppm
+Skew            : 0.033 ppm
+Root delay      : 0.015920 seconds
+Root dispersion : 0.000944 seconds
+Update interval : 1042.2 seconds
+Leap status     : Normal
+
+AUTHENTICATION
+-------------------
+Mode: default
+* No additional settings.
+
+Running hot with:
+* Settings not available.
+
+ACTIONS
+-------------------
+  Actions is disabled.
+  Storage Provider: 
+
+PACKAGES
+-------------------
+  Packages is disabled.
+  Storage Provider: 
+
+CODE SCANNING
+-------------------
+  Code Scanning is disabled.
+
+
+====================================
+ PRIVACY
+====================================
+  Private Mode: enabled
+  Public Pages: disabled
+
+
+====================================
+ MAINTENANCE
+====================================
+Maintenance mode: disabled
+
+
+====================================
+ BACKUP STATUS
+====================================
+
+RECENT BACKUPS
+-------------------
+No recently logged backup attempts.
+
+BACKUP UTILITIES VERSION
+-------------------
+Not available.
+
+BACKUP OR RESTORE IN PROGRESS
+-------------------
+No.
+
+
+====================================
+ SSL
+====================================
+Enabled: false
+
+Custom CA certificates
+-------------------
+* No custom CA certificates installed.
+
+
+====================================
+ MONITORING
+====================================
+
+SNMP
+-------------------
+Enabled: false
+
+LOG FORWARDING
+-------------------
+Enabled: false
+
+COLLECTD FORWARDING
+-------------------
+Enabled: false
+
+
+====================================
+ RATE LIMITING
+====================================
+
+HTTP API RATE LIMITING
+-------------------
+Enabled: false
+
+ABUSE RATE LIMITING
+-------------------
+Enabled: false
+
+GIT RATE LIMITING
+-------------------
+Enabled: false
+
+
+====================================
+ CONNECTIVITY TESTS
+====================================
+
+AUTHENTICATION
+-------------------
+
+DEFAULT
+-------
+* No checks to perform.
+
+SMTP
+-------------------
+* No SMTP host configured.
+
+DNS
+-------------------
+Host: 10.99.99.200
+
+ * attempting to ping nameserver host...
+PING 10.99.99.200 (10.99.99.200) 56(84) bytes of data.
+64 bytes from 10.99.99.200: icmp_seq=1 ttl=128 time=0.542 ms
+64 bytes from 10.99.99.200: icmp_seq=2 ttl=128 time=0.556 ms
+64 bytes from 10.99.99.200: icmp_seq=3 ttl=128 time=0.527 ms
+64 bytes from 10.99.99.200: icmp_seq=4 ttl=128 time=0.518 ms
+64 bytes from 10.99.99.200: icmp_seq=5 ttl=128 time=0.525 ms
+
+--- 10.99.99.200 ping statistics ---
+5 packets transmitted, 5 received, 0% packet loss, time 2053ms
+rtt min/avg/max/mdev = 0.518/0.533/0.556/0.028 ms
+
+
+INTER-NODE CONNECTIVITY
+-------------------
+
+
+====================================
+ LOAD
+====================================
+
+ 09:32:53 up 2 days,  1:54,  1 user,  load average: 0.06, 0.08, 0.05
+
+
+====================================
+ TIMING
+====================================
+
+SYSTEM BOOT TIME
+-------------------
+
+LAST REBOOTS
+-------------------
+ 0 a669614cec83480fa06cbea31b77a10c Mon 2022-02-14 07:38:13 UTC—Wed 2022-02-16 09:32:50 UTC
+
+SERVICES STARTUP TIME
+-------------------
+
+
+====================================
+ SERVICES
+====================================
+
+active
+  - chrony, process 1760
+  - collectd
+  - dnsmasq, process 1813
+  - enterprise-manage-unicorn, process 8657
+  - ghe-user-disk, process 5989
+  - grafana-server, process 1743
+  - haproxy, process 5467
+  - ssh, process 1809
+  - syslog-ng, process 747
+  - systemd-journald, process 287
+
+inactive
+  - consul
+  - consul-template
+  - graphite-web
+  - nomad
+  - wireguard
+
+enterprise-manage-consul.service loaded activating start     start enterprise-manage-consul.service
+grafana-server-consul.service    loaded activating start     start grafana-server-consul.service   
+haproxy-cluster-proxy.service    loaded activating start-pre start HAProxy cluster proxy           
+haproxy-data-proxy.service       loaded activating start-pre start HAProxy data proxy              
+
+====================================
+ NOMAD INFO
+====================================
+
+NOMAD NODE STATUS
+-------------------
+
+NOMAD JOB STATUS
+-------------------
+
+NOMAD SERVICE HEALTH
+-------------------
+
+
+====================================
+ PROCESS UTILIZATION
+====================================
+Linux 4.9.0-16-amd64 (localhost) 	02/16/2022 	_x86_64_	(8 CPU)
+
+#      Time   UID      TGID       TID    %usr %system  %guest    %CPU   CPU   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+ 1645003974     0      1762         0    0.98    0.00    0.00    0.98     3      0.00      0.00      0.00       0  /usr/bin/containerd 
+ 1645003974     0      2795         0    0.00    0.98    0.00    0.98     3      0.00      0.00      0.00       0  kworker/u16:2
+ 1645003974     0         0      2795    0.00    0.98    0.00    0.98     3      0.00      0.00      0.00       0  |__kworker/u16:2
+ 1645003974     0     28197         0    0.00    1.96    0.00    1.96     3      0.00      0.00      0.00       0  pidstat -lduht 1 5 
+ 1645003974     0         0     28197    0.00    1.96    0.00    1.96     3      0.00      0.00      0.00       0  |__pidstat -lduht 1 5 
+
+#      Time   UID      TGID       TID    %usr %system  %guest    %CPU   CPU   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+ 1645003975     0      1805         0    2.00    4.00    0.00    6.00     3      0.00      8.00      0.00       0  collectd -C /etc/collectd/collectd.conf -f 
+ 1645003975     0         0      1939    0.00    1.00    0.00    1.00     1      0.00      0.00      0.00       0  |__collectd -C /etc/collectd/collectd.conf -f 
+ 1645003975     0         0      1941    2.00    0.00    0.00    2.00     2      0.00      0.00      0.00       0  |__collectd -C /etc/collectd/collectd.conf -f 
+ 1645003975     0         0      1942    0.00    1.00    0.00    1.00     1      0.00      0.00      0.00       0  |__collectd -C /etc/collectd/collectd.conf -f 
+ 1645003975     0         0      1943    1.00    0.00    0.00    1.00     3      0.00      4.00      0.00       0  |__collectd -C /etc/collectd/collectd.conf -f 
+ 1645003975     0         0      1944    0.00    1.00    0.00    1.00     2      0.00      4.00      0.00       0  |__collectd -C /etc/collectd/collectd.conf -f 
+ 1645003975     0         0      1949    0.00    1.00    0.00    1.00     5      0.00      0.00      0.00       0  |__collectd -C /etc/collectd/collectd.conf -f 
+ 1645003975     0      1841         0    0.00    2.00    0.00    2.00     3      0.00    528.00      0.00       0  /usr/bin/rrdcached -m 777 -l unix:/var/run/rrdcached.sock -F -b /var/lib/collectd/rrd/ -B -z 150 -w 300 -p /var/run/rrdcached.p
+ 1645003975     0         0      1843    0.00    0.00    0.00    0.00     7      0.00    140.00      0.00       0  |__/usr/bin/rrdcached -m 777 -l unix:/var/run/rrdcached.sock -F -b /var/lib/collectd/rrd/ -B -z 150 -w 300 -p /var/run/rrdcached.p
+ 1645003975     0         0      1844    0.00    0.00    0.00    0.00     6      0.00    124.00      0.00       0  |__/usr/bin/rrdcached -m 777 -l unix:/var/run/rrdcached.sock -F -b /var/lib/collectd/rrd/ -B -z 150 -w 300 -p /var/run/rrdcached.p
+ 1645003975     0         0      1845    0.00    0.00    0.00    0.00     2      0.00    124.00      0.00       0  |__/usr/bin/rrdcached -m 777 -l unix:/var/run/rrdcached.sock -F -b /var/lib/collectd/rrd/ -B -z 150 -w 300 -p /var/run/rrdcached.p
+ 1645003975     0         0      1846    0.00    0.00    0.00    0.00     0      0.00    140.00      0.00       0  |__/usr/bin/rrdcached -m 777 -l unix:/var/run/rrdcached.sock -F -b /var/lib/collectd/rrd/ -B -z 150 -w 300 -p /var/run/rrdcached.p
+ 1645003975     0         0     28310    0.00    1.00    0.00    1.00     1      0.00      0.00      0.00       0  |__/usr/bin/rrdcached -m 777 -l unix:/var/run/rrdcached.sock -F -b /var/lib/collectd/rrd/ -B -z 150 -w 300 -p /var/run/rrdcached.p
+ 1645003975     0     28197         0    1.00    0.00    0.00    1.00     3      0.00      4.00      0.00       0  pidstat -lduht 1 5 
+ 1645003975     0         0     28197    1.00    0.00    0.00    1.00     3      0.00      4.00      0.00       0  |__pidstat -lduht 1 5 
+
+#      Time   UID      TGID       TID    %usr %system  %guest    %CPU   CPU   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+ 1645003976     0      1762         0    0.00    1.00    0.00    1.00     3      0.00      0.00      0.00       0  /usr/bin/containerd 
+ 1645003976   105         0      5491    0.00    1.00    0.00    1.00     7      0.00      0.00      0.00       0  |__/usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -p /var/run/haproxy.pid 
+ 1645003976     0     28197         0    1.00    2.00    0.00    3.00     3      0.00      4.00      0.00       0  pidstat -lduht 1 5 
+ 1645003976     0         0     28197    1.00    2.00    0.00    3.00     3      0.00      4.00      0.00       0  |__pidstat -lduht 1 5 
+
+#      Time   UID      TGID       TID    %usr %system  %guest    %CPU   CPU   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+ 1645003977     0       228         0    0.00    1.00    0.00    1.00     4      0.00    156.00      0.00       0  jbd2/sda1-8
+ 1645003977     0         0       228    0.00    1.00    0.00    1.00     4      0.00    156.00      0.00       0  |__jbd2/sda1-8
+ 1645003977     0     24100         0    0.00    1.00    0.00    1.00     5      0.00      0.00      0.00       0  /bin/bash /usr/local/share/enterprise/ghe-consul-register grafana-server --port 8001 --check --http http://localhost:8001/api/h
+ 1645003977     0         0     24100    0.00    1.00    0.00    1.00     5      0.00      0.00      0.00       0  |__/bin/bash /usr/local/share/enterprise/ghe-consul-register grafana-server --port 8001 --check --http http://localhost:8001/api/h
+ 1645003977     0     28197         0    1.00    1.00    0.00    2.00     3      0.00      0.00      0.00       0  pidstat -lduht 1 5 
+ 1645003977     0         0     28197    1.00    1.00    0.00    2.00     3      0.00      0.00      0.00       0  |__pidstat -lduht 1 5 
+
+#      Time   UID      TGID       TID    %usr %system  %guest    %CPU   CPU   kB_rd/s   kB_wr/s kB_ccwr/s iodelay  Command
+ 1645003978     0       619         0    0.00    0.00    0.00    0.00     7     76.00      0.00      0.00       0  /bin/bash /usr/local/share/enterprise/ghe-welcome 
+ 1645003978   613         0      1834    0.00    1.00    0.00    1.00     1      0.00      0.00      0.00       0  |__/usr/sbin/grafana-server --config=/etc/grafana/grafana.ini --pidfile=/var/run/grafana/grafana-server.pid cfg:default.paths.logs
+ 1645003978     0     24693         0    0.00    1.00    0.00    1.00     7      0.00      0.00      0.00       0  /bin/bash /usr/local/share/enterprise/ghe-consul-register enterprise-manage --port 1336 --check --http http://localhost:1336/se
+ 1645003978     0         0     24693    0.00    1.00    0.00    1.00     7      0.00      0.00      0.00       0  |__/bin/bash /usr/local/share/enterprise/ghe-consul-register enterprise-manage --port 1336 --check --http http://localhost:1336/se
+ 1645003978     0     28197         0    0.00    2.00    0.00    2.00     3      0.00      0.00      0.00       0  pidstat -lduht 1 5 
+ 1645003978     0         0     28197    0.00    2.00    0.00    2.00     3      0.00      0.00      0.00       0  |__pidstat -lduht 1 5 
+
+
+====================================
+ IO UTILIZATION
+====================================
+Linux 4.9.0-16-amd64 (localhost) 	02/16/2022 	_x86_64_	(8 CPU)
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.38    0.00    0.67    0.01    0.00   98.94
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     3.96    1.89   19.04    10.44   108.30    11.34     0.04    1.98    0.12    2.16   0.07   0.14
+sdb               0.00     1.47    2.44    0.20    65.88    99.36   125.17     0.00    0.40    0.12    3.84   0.19   0.05
+dm-0              0.00     0.00    1.45    1.58    61.87    99.36   106.54     0.02    7.45    0.14   14.15   0.13   0.04
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.25    0.00    0.50    0.00    0.00   99.25
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.25    0.00    0.75    0.00    0.00   99.00
+
+Device:         rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+sda               0.00    12.00    0.00  138.00     0.00   688.00     9.97     0.59    4.35    0.00    4.35   0.09   1.20
+sdb               0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+dm-0              0.00     0.00    0.00    0.00     0.00     0.00     0.00     0.00    0.00    0.00    0.00   0.00   0.00
+
+
+
+====================================
+ IO THROUGHPUT
+====================================
+
+/dev/mapper/ghe_storage_d8574063-ghe_user_data:
+ Timing cached reads:   12346 MB in  2.00 seconds = 6187.92 MB/sec
+ Timing buffered disk reads: 3630 MB in  3.00 seconds = 1209.28 MB/sec
+
+
+====================================
+ RUNNING PROCESSES
+====================================
+
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         2  0.0  0.0      0     0 ?        S    Feb14   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    Feb14   0:42  \_ [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S    Feb14   1:05  \_ [rcu_sched]
+root         8  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [rcu_bh]
+root         9  0.0  0.0      0     0 ?        S    Feb14   0:07  \_ [migration/0]
+root        10  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [lru-add-drain]
+root        11  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [watchdog/0]
+root        12  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [cpuhp/0]
+root        13  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [cpuhp/1]
+root        14  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [watchdog/1]
+root        15  0.0  0.0      0     0 ?        S    Feb14   0:07  \_ [migration/1]
+root        16  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [ksoftirqd/1]
+root        18  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/1:0H]
+root        19  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [cpuhp/2]
+root        20  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [watchdog/2]
+root        21  0.0  0.0      0     0 ?        S    Feb14   0:07  \_ [migration/2]
+root        22  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [ksoftirqd/2]
+root        24  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/2:0H]
+root        25  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [cpuhp/3]
+root        26  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [watchdog/3]
+root        27  0.0  0.0      0     0 ?        S    Feb14   0:06  \_ [migration/3]
+root        28  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [ksoftirqd/3]
+root        30  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/3:0H]
+root        31  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [cpuhp/4]
+root        32  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [watchdog/4]
+root        33  0.0  0.0      0     0 ?        S    Feb14   0:07  \_ [migration/4]
+root        34  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [ksoftirqd/4]
+root        36  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/4:0H]
+root        37  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [cpuhp/5]
+root        38  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [watchdog/5]
+root        39  0.0  0.0      0     0 ?        S    Feb14   0:07  \_ [migration/5]
+root        40  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [ksoftirqd/5]
+root        42  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/5:0H]
+root        43  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [cpuhp/6]
+root        44  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [watchdog/6]
+root        45  0.0  0.0      0     0 ?        S    Feb14   0:07  \_ [migration/6]
+root        46  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [ksoftirqd/6]
+root        48  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/6:0H]
+root        49  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [cpuhp/7]
+root        50  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [watchdog/7]
+root        51  0.0  0.0      0     0 ?        S    Feb14   0:07  \_ [migration/7]
+root        52  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [ksoftirqd/7]
+root        54  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/7:0H]
+root        55  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [kdevtmpfs]
+root        56  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [netns]
+root        57  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [khungtaskd]
+root        58  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [oom_reaper]
+root        59  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [writeback]
+root        60  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [kcompactd0]
+root        62  0.0  0.0      0     0 ?        SN   Feb14   0:00  \_ [ksmd]
+root        63  0.0  0.0      0     0 ?        SN   Feb14   0:00  \_ [khugepaged]
+root        64  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [crypto]
+root        65  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kintegrityd]
+root        66  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [bioset]
+root        67  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kblockd]
+root        71  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [devfreq_wq]
+root        72  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [watchdogd]
+root        73  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [kswapd0]
+root        74  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [vmstat]
+root        86  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kthrotld]
+root        91  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [ipv6_addrconf]
+root       131  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [scsi_eh_0]
+root       132  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [scsi_tmf_0]
+root       133  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [ata_sff]
+root       134  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [vmw_pvscsi_wq_0]
+root       141  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [bioset]
+root       143  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [scsi_eh_1]
+root       144  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [bioset]
+root       145  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [scsi_tmf_1]
+root       147  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [scsi_eh_2]
+root       149  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [scsi_tmf_2]
+root       187  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [ttm_swap]
+root       194  0.0  0.0      0     0 ?        S<   Feb14   0:01  \_ [kworker/0:1H]
+root       195  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/7:1H]
+root       196  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/4:1H]
+root       197  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/5:1H]
+root       198  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/6:1H]
+root       220  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/u17:0]
+root       228  0.0  0.0      0     0 ?        S    Feb14   0:15  \_ [jbd2/sda1-8]
+root       229  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [ext4-rsv-conver]
+root       312  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [kauditd]
+root       563  0.0  0.0      0     0 ?        S<   Feb14   0:01  \_ [kworker/1:1H]
+root       817  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [edac-poller]
+root      2118  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kworker/3:1H]
+root      2775  0.0  0.0      0     0 ?        S<   Feb14   0:01  \_ [kworker/2:1H]
+root      6061  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [kdmflush]
+root      6062  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [bioset]
+root      7163  0.0  0.0      0     0 ?        S    Feb14   0:00  \_ [jbd2/dm-0-8]
+root      7164  0.0  0.0      0     0 ?        S<   Feb14   0:00  \_ [ext4-rsv-conver]
+root     28661  0.0  0.0      0     0 ?        S    08:40   0:00  \_ [kworker/4:0]
+root      4556  0.0  0.0      0     0 ?        S    08:41   0:00  \_ [kworker/7:1]
+root      6185  0.0  0.0      0     0 ?        S    08:54   0:01  \_ [kworker/u16:0]
+root     31028  0.0  0.0      0     0 ?        S    08:58   0:00  \_ [kworker/6:1]
+root     31097  0.0  0.0      0     0 ?        S    08:58   0:00  \_ [kworker/5:0]
+root      7796  0.0  0.0      0     0 ?        S    09:06   0:00  \_ [kworker/3:1]
+root     24492  0.0  0.0      0     0 ?        S    09:09   0:00  \_ [kworker/6:0]
+root       345  0.0  0.0      0     0 ?        S    09:10   0:00  \_ [kworker/7:2]
+root     16872  0.0  0.0      0     0 ?        S    09:13   0:00  \_ [kworker/0:1]
+root     16878  0.0  0.0      0     0 ?        S    09:13   0:01  \_ [kworker/u16:3]
+root      1166  0.0  0.0      0     0 ?        S    09:16   0:00  \_ [kworker/1:1]
+root      1911  0.0  0.0      0     0 ?        S    09:16   0:00  \_ [kworker/3:0]
+root      9610  0.0  0.0      0     0 ?        S    09:18   0:00  \_ [kworker/2:2]
+root     17827  0.0  0.0      0     0 ?        S    09:19   0:00  \_ [kworker/5:2]
+root      2008  0.0  0.0      0     0 ?        S    09:22   0:00  \_ [kworker/1:0]
+root     10319  0.0  0.0      0     0 ?        S    09:24   0:00  \_ [kworker/u16:1]
+root     10382  0.0  0.0      0     0 ?        S    09:24   0:00  \_ [kworker/0:0]
+root     18671  0.0  0.0      0     0 ?        S    09:25   0:00  \_ [kworker/5:1]
+root     26929  0.0  0.0      0     0 ?        S    09:27   0:00  \_ [kworker/2:1]
+root     26944  0.0  0.0      0     0 ?        S    09:27   0:00  \_ [kworker/4:2]
+root      2777  0.0  0.0      0     0 ?        S    09:28   0:00  \_ [kworker/1:2]
+root      2788  0.0  0.0      0     0 ?        S    09:28   0:00  \_ [kworker/3:2]
+root      2795  0.0  0.0      0     0 ?        S    09:28   0:00  \_ [kworker/u16:2]
+root      2796  0.0  0.0      0     0 ?        S    09:28   0:00  \_ [kworker/5:3]
+root     11180  0.0  0.0      0     0 ?        S    09:30   0:00  \_ [kworker/7:0]
+root     11649  0.0  0.0      0     0 ?        S    09:30   0:00  \_ [kworker/0:2]
+root         1  0.0  0.0 139592  7344 ?        Ss   Feb14   0:51 /sbin/init text
+root       287  0.0  0.3 242488 151648 ?       Ss   Feb14   0:50 /lib/systemd/systemd-journald
+root       344  0.0  0.0  46776  4824 ?        Ss   Feb14   0:00 /lib/systemd/systemd-udevd
+root       553  0.0  0.0 107196  3080 ?        Ss   Feb14   0:18 /sbin/lvmetad -f
+root       619  0.0  0.0  27992  7480 tty1     Ss+  Feb14   2:43 /bin/bash /usr/local/share/enterprise/ghe-welcome
+root     28376  0.0  0.0  19628  3312 tty1     S+   Feb14   0:00  \_ /bin/bash /usr/local/share/enterprise/ghe-welcome-journal 17
+root     28378  0.0  0.1 222184 69312 tty1     S+   Feb14   0:06      \_ journalctl -n17 --output=json -f _EXE=/lib/systemd/systemd + _TRANSPORT=kernel
+root     28379  0.1  0.0  19660  2508 tty1     S+   Feb14   3:25      \_ /bin/bash /usr/local/share/enterprise/ghe-welcome-journal 17
+root       654  0.0  0.0  83736 10672 ?        Ss   Feb14   0:00 /usr/bin/VGAuthService
+root       655  0.0  0.0 193272 10520 ?        Ssl  Feb14   0:57 /usr/bin/vmtoolsd
+root       683  0.0  0.0  46424  4700 ?        Ss   Feb14   0:10 /lib/systemd/systemd-logind
+message+   697  0.0  0.0  45116  3704 ?        Ss   Feb14   0:10 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation
+root       740  0.0  0.0  29664  2936 ?        Ss   Feb14   0:00 /usr/sbin/cron -f
+root       747  0.0  0.0 570592 25012 ?        Ssl  Feb14   0:21 /usr/sbin/syslog-ng -F --pidfile=/var/run/syslog-ng.pid
+root       784  0.0  0.0  10072   112 ?        Ss   Feb14   0:00 /sbin/rdnssd -u rdnssd -H /etc/rdnssd/merge-hook
+rdnssd     786  0.0  0.0  18512  1724 ?        S    Feb14   0:00  \_ /sbin/rdnssd -u rdnssd -H /etc/rdnssd/merge-hook
+root      1606  0.0  0.0  20360  3068 ?        Ss   Feb14   0:00 /sbin/dhclient -4 -v -pf /run/dhclient.eth0.pid -lf /var/lib/dhcp/dhclient.eth0.leases -I -df /var/lib/dhcp/dhclient6.eth0.leases eth0
+grafana   1743  0.0  0.0 1323876 25256 ?       Ssl  Feb14   0:43 /usr/sbin/grafana-server --config=/etc/grafana/grafana.ini --pidfile=/var/run/grafana/grafana-server.pid cfg:default.paths.logs=/var/log/grafana cfg:default.paths.data=/var/lib/grafana cfg:default.paths.plugins=/var/lib/grafana/plugins
+_chrony   1760  0.0  0.0 107924  2736 ?        S    Feb14   0:00 /usr/sbin/chronyd
+root      1762  0.1  0.0 776928 42856 ?        Ssl  Feb14   5:21 /usr/bin/containerd
+root      1804  0.0  0.0   4168    76 ?        Ss   Feb14   0:00 /usr/sbin/collectdmon -P /var/run/collectdmon.pid -- -C /etc/collectd/collectd.conf
+root      1805  0.6  0.0 1169640 28404 ?       Sl   Feb14  19:04  \_ collectd -C /etc/collectd/collectd.conf -f
+nobody    1965  0.0  0.0 134344 23328 ?        S    Feb14   0:30      \_ /usr/share/rbenv/versions/current/bin/ruby /usr/share/collectd/listener_stats.rb
+root      1809  0.0  0.0  69960  5412 ?        Ss   Feb14   0:00 /usr/sbin/sshd -D
+root     18217  0.0  0.0 105680  6952 ?        Ss   Feb14   0:00  \_ sshd: admin [priv]
+admin    18704  0.0  0.0 105984  5204 ?        S    Feb14   0:00  |   \_ sshd: admin@pts/0
+admin    18927  0.0  0.0  20000  3672 pts/0    Ss   Feb14   0:00  |       \_ -bash
+root     27153  0.0  0.0  55396  3744 pts/0    SN+  09:32   0:00  |           \_ sudo -u root /usr/local/bin/ghe-diagnostics 2>&1
+root     27157  0.1  0.0  11304  3112 pts/0    SN+  09:32   0:00  |               \_ /bin/bash /usr/local/bin/ghe-diagnostics 2>&1
+root     30142  0.0  0.0  38452  3344 pts/0    RN+  09:33   0:00  |                   \_ ps auxf
+root     30143  0.0  0.0  14880  1012 pts/0    SN+  09:33   0:00  |                   \_ sed s/[ \t]*$//
+root     18508  0.0  0.0 105680  6928 ?        Ss   Feb14   0:00  \_ sshd: admin [priv]
+admin    19194  0.0  0.0 105680  4100 ?        S    Feb14   0:00      \_ sshd: admin@notty
+admin    19265  0.0  0.0  12684  1692 ?        Ss   Feb14   0:00          \_ /usr/lib/openssh/sftp-server
+dnsmasq   1813  0.0  0.0  53840   412 ?        S    Feb14   0:00 /usr/sbin/dnsmasq -x /run/dnsmasq/dnsmasq.pid -u dnsmasq -I lo -7 /etc/dnsmasq.d,.dpkg-dist,.dpkg-old,.dpkg-new --local-service
+root      1841  0.2  0.0 663520  5748 ?        Ssl  Feb14   7:15 /usr/bin/rrdcached -m 777 -l unix:/var/run/rrdcached.sock -F -b /var/lib/collectd/rrd/ -B -z 150 -w 300 -p /var/run/rrdcached.pid
+root      1863  0.0  0.0  10700  1828 ?        Ss   Feb14   0:11 /usr/sbin/ipwatchd -c /etc/ipwatchd.conf
+root      5467  0.0  0.0 134932 17636 ?        Ss   Feb14   0:03 /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -p /var/run/haproxy.pid
+haproxy   5483  0.0  0.0 578472 10328 ?        Sl   Feb14   0:29  \_ /usr/sbin/haproxy -Ws -f /etc/haproxy/haproxy.cfg -p /var/run/haproxy.pid
+enterpr+  8657  0.0  0.1 218060 62120 ?        Ss   Feb14   0:03 unicorn master --env production --config-file config/unicorn.rb config.ru
+enterpr+  9292  0.0  0.1 246748 63700 ?        S    Feb14   0:00  \_ unicorn worker[0] --env production --config-file config/unicorn.rb config.ru
+enterpr+  9293  0.0  0.1 240600 64184 ?        S    Feb14   0:01  \_ unicorn worker[1] --env production --config-file config/unicorn.rb config.ru
+admin    18547  0.0  0.0  64848  6184 ?        Ss   Feb14   0:00 /lib/systemd/systemd --user
+admin    18548  0.0  0.0  86740  1792 ?        S    Feb14   0:00  \_ (sd-pam)
+root     22732  0.0  0.1 1026740 79272 ?       Ssl  Feb14   0:20 /usr/bin/dockerd -H fd:// --containerd=/run/containerd/containerd.sock
+root     21385  0.0  0.0 113564 13968 ?        Ss   09:31   0:00 /usr/local/bin/ruby -e puts "Waiting for #{ENV["CONFIG"]}..."; STDOUT.flush; sleep 0.1 until File.exist?(ENV["CONFIG"]); puts "Found #{ENV["CONFIG"]}"
+root     21389  0.0  0.0 113564 14176 ?        Ss   09:31   0:00 /usr/local/bin/ruby -e puts "Waiting for #{ENV["CONFIG"]}..."; STDOUT.flush; sleep 0.1 until File.exist?(ENV["CONFIG"]); puts "Found #{ENV["CONFIG"]}"
+root     27466  0.0  0.0  37804  2124 ?        Ss   09:32   0:00 /lib/systemd/systemd-timedated
+root     29235  0.1  0.0  19700  3492 ?        Ss   09:33   0:00 /bin/bash /usr/local/share/enterprise/ghe-consul-register grafana-server --port 8001 --check --http http://localhost:8001/api/health --interval 15s
+root     30140  0.0  0.0   5828   696 ?        S    09:33   0:00  \_ sleep 0.2
+root     29830  0.0  0.0  19700  3292 ?        Ss   09:33   0:00 /bin/bash /usr/local/share/enterprise/ghe-consul-register enterprise-manage --port 1336 --check --http http://localhost:1336/setup/unlock --interval 15s
+root     30132  0.0  0.0   5828   660 ?        S    09:33   0:00  \_ sleep 0.2
+
+
+====================================
+ JOB QUEUES
+====================================
+
+Host gittest-netbrain-com-primary did not respond to redis ping
+
+ --> Displaying aqueduct job queues at 2022-02-16 09:33:13 +0000 UTC...
+ --> Done.
+
+
+====================================
+ CONFIGURATION RUN
+====================================
+
+CONFIGURATION RUN IN PROGRESS
+-------------------
+false
+No.
+
+
+====================================
+ MYSQL INFO
+====================================
+====================================
+ REDIS INFO
+====================================
+
+* Could not connect to Redis.
+
+
+====================================
+ MEMCACHED STATS
+====================================
+
+* Could not connect to Memcached.
+
+
+====================================
+ ELASTICSEARCH INFO
+====================================
+
+ELASTICSEARCH UPGRADE SERVICE
+-------------------
+* es:enterprise:upgrade is not running.
+
+ELASTICSEARCH NODE
+-------------------
+* Could not connect to Elasticsearch.
+
+ELASTICSEARCH CLUSTER HEALTH
+-------------------
+* Could not connect to Elasticsearch.
+
+ELASTICSEARCH CLUSTER STATS
+-------------------
+* Could not connect to Elasticsearch.
+
+ELASTICSEARCH INDICES
+-------------------
+* Could not connect to Elasticsearch.
+
+ELASTICSEARCH SHARDS
+-------------------
+* Could not connect to Elasticsearch.
+
+FIRST UNASSIGNED SHARD EXPLANATION
+-------------------
+* No unassigned shards to explain
+
+
+====================================
+ INSTALLATION INFO
+====================================
+* No info available.
+
+
+====================================
+ SPOKES INFO
+====================================
+
+
+Per-node replicas counts
+-------------------
+
+Per-node Gist replicas counts
+-------------------
+
+
+====================================
+ Repositories
+====================================
+
+Repository networks over maintenance threshold
+-------------------
+
+
+====================================
+ DPAGES INFO
+====================================
+
+
+
+====================================
+ STORAGE REPLICATION
+====================================
+
+
+Per-node object counts
+-------------------
+
+
+====================================
+ GIT ACTIVITY SUMMARY
+====================================
+Total number of Git requests (fetches, clones, and pushes): 0
+Average number of Git requests: 0 ops/sec
+
+====================================
+ GIT STATS
+====================================
+
+HEALTH
+-------------------
+
+CPU TOP
+-------------------
+
+CPU AGGREGATE
+-------------------
+
+DISK TOP
+-------------------
+
+DISK AGGREGATE
+-------------------
+
+TOP FETCHED REPOSITORIES
+-------------------
+
+TOP PUSHED REPOSITORIES
+-------------------
